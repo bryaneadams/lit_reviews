@@ -1,0 +1,187 @@
+\documentclass[12pt]{article}
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{algpseudocode}
+\usepackage{amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{makecell}
+\usepackage{algorithm}
+\usepackage{subcaption}
+\usepackage{titlesec}
+
+\pdfpagewidth 8.5in
+\pdfpageheight 11.0in
+\textheight = 700pt
+
+\setlength{\parindent}{0pt}
+
+
+
+\begin{document}
+
+\subsection*{Nested Skills in Labor Ecosystems: A Hidden Dimension of Human Capital\cite{nested_skills}}
+
+\subsubsection*{Abstract}
+
+Modern economies, characterized by their vast output of goods and services, operate through globally interconnected networks. As economies become more com- plex, so do these networks, coordinating increasingly diverse portfolios of specialized efforts and knowledge. In this study, we analyze U.S. survey data (2005-2019) to infer an underlying interdependency tree within the fabric of skill portfolios. Hierarchically constructed, this skill tree starts from widely needed, foundational abilities, constituting the root, and extends to highly specialized, niche skills required by select jobs at the extremities. The directionality is defined by the asymmetrical conditional probabilities of the presence of one skill given the existence of another. Examining 70 million job transitions in resumes and national surveys, we observe that individuals tend to delve deeper into these nested specialization paths as they ascend the career ladder to enjoy higher wage premiums. Nevertheless, the role of foundational skills for such ascent remains pivotal; without reinforcing them, the anticipated wage premiums may vanish. Hence, we further differentiate nested skills from others, with the former building on common prerequisites while the latter does not, and analyze disparities in these skill gaps across different geographic locations, genders, and racial/ethnic groups, observing how these variations in absorptive capacity impact wage premiums. Our analysis reveals a growing and concerning fragmentation in the divide between these two skill groups over the past two decades, suggesting further polarization within the job landscape. Our findings highlight the critical role of robust foundational skills as a stepping stone to specialization and the economic advantages it can confer, reinforcing the need for balanced skill development strategies in complex economies
+
+\subsubsection*{Summary}
+
+The article examens skills from widely needed (general) to highly specialized. They find that skill sets are in a hierarchical structure with some that are heavily nested and others that are not. They look at the skill structures and how they relate to individual trajectories. They see that as time progresses people tend to fit a "path" and it depends on foundational skills. This is more focused on the individual and how their is a widening gap between disadvantage subgroups. The usefulness might be in techniques to relate SKAs.
+
+\subsubsection*{Data}
+
+\begin{enumerate}
+    \item 70 million job transitions resumes
+    \item Survey data - conducted by the U.S. Bureau of Labor Statistics (BLS), which record the importance and intensity of each skill, knowledge, or ability required in detailed occupational categories
+\end{enumerate}
+
+\subsubsection*{Methods}
+
+\begin{enumerate}
+    \item classify skills into categories of generality based on their demand profile shapes
+    \item group skills by their similar distribution shapes by k-mean clustering algorithms with correlation metrics. SKAs are taken from \href{https://www.onetonline.org}{$O^*NET$}
+    \item builds a network of skills (node is skill), weighted directions based on conditional probabilities of a skill given the other skill is present, e.g. math and computer programming.
+\end{enumerate}
+
+%%%%%-----------%%%%%
+
+\subsection*{Skill relatedness and firm diversification\cite{skill_relatedness}}
+
+\subsubsection*{Abstract}
+
+Because of the importance of human capital, a firm's choice of diversification targets will depend on whether these targets offer opportunities for leveraging existing human resources. We propose to quantify the similarity of different industries' human capital or skill requirements, that is, the industries' skill relatedness, by using information on cross-industry labor flows. Labor flows among industries can be used to identify skill relatedness, because individuals changing jobs will likely remain in industries that value the skills associated with their previous work. Estimates show that firms are far more likely to diversify into industries that have ties to the firms' core activities in terms of our skill-relatedness measure than into industries without such ties or into industries that are linked by value chain linkages or by classification-based relatedness.
+
+\subsubsection*{Summary}
+
+This paper discusses skill relatedness and how it will link firms across industry, that is, if your current firm has the same skill set as another firm in a different industry, you are more likely to diversify into that industry. The do not look at specific skills, instead they assume that the overall size of labor flow from industry A to industry B represents their skill relatedness. The use $SR_{ij}=F_{ij}/\hat{F_{ij}}$, where $F_{ij}$ is observed labor flow from industry $i$ to $j$. $\hat{F_{ij}}$ is predict cross-industry flow. The do find:  "Our empirical analyses show that a skill- relatedness index based on labor flows has strong predictive power for firm diversification."\\
+
+"Therefore, we propose a different method for measuring human capital relatedness, or "skill relatedness," by using direct measures of labor sharing across industries. In essence, we submit that the interconnectedness of industries that guides corporate diversification strategies also affects cross-industry labor flows. Or, reversing this logic, we aim to predict corporate diversification by studying the structure of cross-industry labor flows." \\
+
+"In labor economics, human capital is often treated as if it were readily quantifiable, for instance by numeric values that reflect educational attainment or the number of years of work experience. However, human capital is no homogenous quantity. Rather, human capital consists of sets of heterogeneous skills. It is therefore more appropriate to discuss human capital in terms of which skills an individual possesses rather than in terms of how many skills."
+
+\subsubsection*{Data}
+Data from administrative records that cover roughly 4.5 million individuals who were employed in over 400 different industries in Sweden between 2004 and 2007.
+\subsubsection*{Methods}
+Basic statistics and build a network between industries where links are based on $SR_{ij}$ They also use logistic regression to predict firm diversification moves.
+
+%%%%%-----------%%%%%
+
+\subsection*{Skill Networks and Measures of Complex Human Capital\cite{anderson2017skill}}
+
+\subsubsection*{Abstract}
+We propose a network-based method for measuring worker skills. We illustrate the method using data from an online freelance website. Using the tools of network analysis, we divide skills into endogenous categories based on their relationship with other skills in the market. Workers who specialize in these different areas earn dramatically different wages. We then show that, in this market, network-based measures of human capital provide additional insight into wages beyond traditional measures. In particular, we show that workers with diverse skills earn higher wages than those with more specialized skills. Moreover, we can distinguish between two different types of workers benefiting from skill diversity: jacks-of-all-trades, whose skills can be applied independently on a wide range of jobs, and synergistic workers, whose skills are useful in combination and fill a hole in the labor market. On average, workers whose skills are synergistic earn more than jacks-of-all-trades.
+
+\subsubsection*{Summary}
+
+\subsubsection*{Data}
+The data used in this paper was collected from UpWork over a period of three months, between
+November 2013 and January 2014.1 We collected a total of 33,592 worker profiles and 365,561 job listings at random from the public part of the website.
+\subsubsection*{Methods}
+
+\begin{enumerate}
+    \item For determining skill similarity:  Creates a network where nodes in the two human capital networks are skills and a connection is made whenever two skills are both listed by a worker or job. Links are weighted with $w_{ij}^{sim} = P(s_j|s_i) = n_{ij}/n_j$ Where $n_i$ is the number of workers that have skill $i$. They define the skill categories by hand.
+\end{enumerate}
+
+%%%%%-----------%%%%%
+
+\subsection*{The value of complementary co-workers\cite{value_of_complementarity}}
+
+\subsubsection*{Abstract}
+As individuals specialize in specific knowledge areas, a society's know-how becomes distributed across different workers.To use this distributed know-how, workers must be coordinated into teams that, collectively, can cover a wide range of expertise. This paper studies the interdependencies among co-workers that result from this process in a population wide dataset covering educational specializations of millions of workers and their co-workers in Sweden over a 10-year period. The analysis shows that the value of what a person knows depends on whom that person works with.Whereas having co-workers with qualifications similar to one's own is costly, having co-workers with complementary qualifications is beneficial. This co-worker complementarity increases over a worker's career and offers a unifying framework to explain seemingly disparate observations, answering questions such as “Why do returns to education differ so widely?” “Why do workers earn higher wages in large establishments?” “Why are wages so high in large cities?”
+\subsubsection*{Summary}
+
+This paper mainly focuses on eduction and a workers history. It does look at the education within a plant (or organization), arguing that their education will balance with a plant. They observe a worker's own skills but also the full set of skills he or she can mobilize through his or her co-workers.
+
+\subsubsection*{Data}
+Detailed information on the education and work histories for the entire Swedish population. These data record an individual’s gender, age, wage, main establishment of work, and current occupation, as well as his or her highest absolved education.  There are 491 educational tracks, such as “344z: Accounting and taxation—college degree” or “214a: Fashion design—upper second- ary degree.”
+
+\subsubsection*{Methods}
+Constructs two separate networks. In the first,maps what pairs of \textbf{educational tracks} suggest strong synergy by frequently co-appearing in the same establishments. In the second, maps which \textbf{educational tracks} are substitutes, by observing which educational tracks allow a worker to do the same jobs. They determine the education synergy.
+
+It uses regression analysis to predict wage using co-worker synergy and substitutability. It also controls for some of the demographic variables in as separate model.
+
+Network 1, uses education track as the node and links are the synergy between them and substitutability. 
+
+%%%%%-----------%%%%%
+
+\subsection*{Investment in human capital: A theoretical analysis\cite{investment_human_capital}}
+
+\subsubsection*{Abstract}
+
+\subsubsection*{Summary}
+
+\subsubsection*{Data}
+
+\subsubsection*{Methods}
+
+
+%%%%%-----------%%%%%
+
+\subsection*{On the mechanics of economic development\cite{on_the_mechanics}}
+
+\subsubsection*{Abstract}
+
+\subsubsection*{Summary}
+
+\subsubsection*{Data}
+
+\subsubsection*{Methods}
+
+%%%%%-----------%%%%%
+
+\subsection*{The returns to skill}
+
+\subsubsection*{Abstract}
+Since 1975, increases in the return to skill (measured by years of education), in the percentage of the labor force that is skilled, and in the variance of wage income within skill categories have characterized the U.S. labor market. The first two facts point towards an increase in the demand for skilled labor; the third fact establishes that this increase in demand has not been uniform for all members of a particular skill category. Hence, the three stylized facts point toward unobserved skill heterogeneity within education classes. In this paper, we argue that education per se does not measure skill adequately, and we suggest an alternative measure based on the observed skill characteristics of the job. We analyze the return to various dimensions of skill, including formal education. After accounting for other elements of skill, we find that the return to years of education has been constant since 1970. Moreover, variations in direct measures of skill, such as mathematical ability or eye-hand coordination, account for a substantial fraction of the increased dispersion in income among the college educated, and some of the increase in wage dispersion among those who have not earned a college degree.
+\subsubsection*{Summary}
+
+\subsubsection*{Data}
+
+\subsubsection*{Methods}
+
+%%%%%-----------%%%%%
+
+\subsection*{How general is human capital? a task-based approach\cite{how_general_is_human_capital}}
+
+\subsubsection*{Abstract}
+This article studies how portable skills accumulated in the labor market are. Using rich data on tasks performed in occupations, we propose the concept of task-specific human capital to measure empirically the transferability of skills across occupations. Our results on occupational mobility and wages show that labor market skills are more portable than previously considered. We find that individuals move to occupations with similar task requirements and that the distance of moves declines with experience. We also show that task-specific human capital is an important source of individual wage growth, accounting for up to 52\% of overall wage growth.
+\subsubsection*{Summary}
+
+\subsubsection*{Data}
+
+\subsubsection*{Methods}
+
+
+%%%%%-----------%%%%%
+
+\subsection*{Unpacking the polarization of workplace skills\cite{unpacking_the_polarization}}
+
+\subsubsection*{Abstract}
+Economic inequality is one of the biggest challenges facing society today. Inequality has been recently exacerbated by growth in high- and low-wage occupations at the expense of middle-wage occupations, leading to a“hollowing”of the middle class. Yet, our understanding of how workplace skills drive this process is limited. Specifically, how do skill requirements distinguish high- and low-wage occupations, and does this distinction constrain the mobility of individuals and urban labor markets? Using unsupervised clustering techniques from network science, we show that skills exhibit a striking polarization into two clusters that highlight the specific social-cognitive skills and sensory-physical skills of high- and low-wage occupations, respectively.The connections between skills explain various dynamics: how workers transition between occupations, how cities acquire comparative advantage in new skills, and how individual occupations change their skill requirements. We also show that the polarized skill topology constrains the career mobility of individual workers, with low-skill workers“stuck”relying on the low-wage skill set. Together, these results provide a new explanation for the persistence of occupational polarization and inform strategies to mitigate the negative effects of automation and offshoring of employment.In addition to our analysis, we provide an online tool for the public and policy makers to explore the skill network: skillscape.mit.edu
+\subsubsection*{Summary}
+
+\subsubsection*{Data}
+
+\subsubsection*{Methods}
+\bibliographystyle{plain}
+\bibliography{refs}
+
+\end{document}
+
+%%%%%-----------%%%%%
+
+% \subsection*{article}
+
+% \subsubsection*{Abstract}
+
+% \subsubsection*{Summary}
+
+% \subsubsection*{Data}
+
+% \subsubsection*{Methods}
+
+%11. B. F. Ingram, G. R. Neumann, The returns to skill. Labour Econ. 13, 35–59 (2006).
+
