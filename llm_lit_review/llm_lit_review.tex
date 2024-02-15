@@ -1,0 +1,78 @@
+\documentclass[12pt]{article}
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{algpseudocode}
+\usepackage{amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{makecell}
+\usepackage{algorithm}
+\usepackage{subcaption}
+\usepackage{titlesec}
+
+\pdfpagewidth 8.5in
+\pdfpageheight 11.0in
+\textheight = 700pt
+
+\setlength{\parindent}{0pt}
+
+
+
+\begin{document}
+
+\subsection*{Labor Space: A Unifying Representation of the Labor Market via Large Language Models}\cite{eloundou2023gpts}
+
+\subsubsection*{Abstract}
+The labor market is a complex ecosystem comprising diverse, inter- connected entities, such as industries, occupations, skills, and firms. Due to the lack of a systematic method to map these heterogeneous entities together, each entity has been analyzed in isolation or only through pairwise relationships, inhibiting comprehensive under- standing of the whole ecosystem. Here, we introduce Labor Space, a vector-space embedding of heterogeneous labor market entities, derived through applying a large language model with fine-tuning. Labor Space exposes the complex relational fabric of various labor market constituents, facilitating coherent integrative analysis of industries, occupations, skills, and firms, while retaining type-specific clustering. We demonstrate its unprecedented analytical capacities, including positioning heterogeneous entities on an economic axes, such as "Manufacturing-Healthcare". Furthermore, by allowing vec- tor arithmetic of these entities, Labor Space enables the exploration of complex inter-unit relations, and subsequently the estimation of the ramifications of economic shocks on individual units and their ripple effect across the labor market. We posit that Labor Space provides policymakers and business leaders with a comprehensive unifying framework for labor market analysis and simulation, fostering more nuanced and effective strategic decision-making.
+
+
+\subsubsection*{Summary}
+
+Performed the following procedures to determine their "Labor Space" is the space the vectors of jobs/professions occupy:
+
+\begin{enumerate}
+    \item  fine-tune the original BERT model by:
+    \item use HuggingFace's “fill mask” pipeline for context learning. Here, the context learning aims to adjust the pre-trained model to the context of the labor market, through additional training with a domain-specific corpus for each entity (see data section for the domain-specific data)
+    \item set the maximum token length to 512 and configured the hyperparameters for three epochs, using a batch size of 8 and a learning rate of 2e-5
+    \item process the textual descriptions of the entities, using the BERT's tokenizer function. The BERT tokenizer, known as Wordpiece, encodes raw text data into token sequences and maps these tokens to their respective token IDs. 
+    \item BERT then maps these token sequences to a matrix, where each row comprises 768-dimensional vectors representing each token ID
+    \item  we compute a linear combination of individual word vectors. This is achieved by summing the embeddings of all the words in the sequence and dividing by the word count, thus capturing the overall semantic essence of the description. 
+\end{enumerate}
+
+Other potential insights are the use of the vector's to see how teams compare to each other or find their difference when transitioning over time through simple vector subtraction.
+
+Might be able to look at summing vectors overtime. 
+
+
+\subsubsection*{Data}
+
+Took data from NAICS, ONET, ESCO, Crunchbase
+
+
+\subsubsection*{Methods}
+
+See summary
+
+
+%%%%%-----------%%%%%
+
+\bibliographystyle{plain}
+\bibliography{refs}
+
+\end{document}
+
+%%%%%-----------%%%%%
+
+% \subsection*{article}
+
+% \subsubsection*{Abstract}
+
+% \subsubsection*{Summary}
+
+% \subsubsection*{Data}
+
+% \subsubsection*{Methods}
+
+%11. B. F. Ingram, G. R. Neumann, The returns to skill. Labour Econ. 13, 35–59 (2006).
+
